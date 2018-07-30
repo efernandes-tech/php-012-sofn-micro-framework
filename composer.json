@@ -6,10 +6,15 @@
             "email": "edersonluis.rf@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/support": "^5.6"
+    },
     "autoload": {
         "psr-4": {
             "EdersonLRF\\": "src"
         }
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.3"
     }
 }
