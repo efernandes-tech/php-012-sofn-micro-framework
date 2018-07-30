@@ -1,0 +1,15 @@
+{
+    "name": "ederson.fernandes/php-012-sofn-micro-framework",
+    "authors": [
+        {
+            "name": "Éderson Fernandes",
+            "email": "edersonluis.rf@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "EdersonLRF\\": "src"
+        }
+    }
+}
