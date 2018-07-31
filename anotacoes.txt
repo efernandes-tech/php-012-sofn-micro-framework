@@ -9,3 +9,6 @@
 - Rodar o CodeSniffer:
     vendor/bin/phpcs src --standard=PSR2
     vendor/bin/phpcbf src --standard=PSR2
+- Com "phpcs.xml" na raiz pode rodar:
+    vendor/bin/phpcs
+    vendor/bin/phpcbf
