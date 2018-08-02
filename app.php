@@ -1,25 +1,13 @@
 <?php
 
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__.'/vendor/autoload.php';
 
-use EdersonLRF\DI\Resolver;
-use EdersonLRF\Renderer\PHPRenderer;
-use EdersonLRF\Router\Router;
+$app = new EdersonLRF\App;
 
-$path_info = $_SERVER['PATH_INFO'] ?? '/';
-$request_method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+$app->setRenderer(new EdersonLRF\Renderer\PHPRenderer);
 
-$router = new Router($path_info, $request_method);
+$app->get('/hello/{name}', function ($params) {
+    return "<h1>{$params[1]}</h1>";
+});
 
-require __DIR__ . "/router.php";
-
-$result = $router->run();
-
-$data = (new Resolver)->method($result['callback'], [
-    'params' => $result['params']
-]);
-
-$renderer = new PHPRenderer;
-
-$renderer->setData($data);
-$renderer->run();
+$app->run();
